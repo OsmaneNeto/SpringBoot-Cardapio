@@ -41,4 +41,11 @@ public class FoodController {
         foodData.setId(id); // Certifique-se de definir o ID do alimento a ser atualizado
         repository.save(foodData);
     }
+
+    // Deletar um item do cardápio
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @DeleteMapping("/{id}")
+    public void deleteFood(@PathVariable Long id) {
+        repository.deleteById(id);
+    }
 }
